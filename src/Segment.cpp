@@ -1,5 +1,20 @@
 #include <Segment.h>
 namespace Geometery{
+    template <typename Type>
+    float Segment<Type>::length() const
+    {
+        return static_cast<const Type*>(this)->lengthImpl();
+    }
+
+    template <typename Type>
+    void Segment<Type>::printInfo() const {
+        static_cast<const Type*>(this)->printInfoImpl();
+    }
+
+    void printSegmentInfo(const Shape& segment) {
+        std::visit([](const auto& seg) { seg.printInfo(); }, segment);
+    }
+
     Line::Line(const Point& start, const Point& end)
         : p1{start}, p2{end} {}
     
@@ -17,27 +32,12 @@ namespace Geometery{
     
     float Arc::lengthImpl() const {
         float theta = (mEndAngle - mStartAngle) * M_PI / 180.0;
-        return mRadius * theta; // Arc length formula
+        return mRadius * theta;
     }
     
     void Arc::printInfoImpl() const {
         std::cout << "Arc Segment: Center (" << mCenter.X << ", " << mCenter.Y << "), Radius: " << mRadius
                   << ", Angle: " << (mEndAngle - mStartAngle) << " rad"
-                  << " | Arc Length: " << lengthImpl() << std::endl;
-    }
-
-    template <typename Type>
-    float Segment<Type>::length() const
-    {
-        return static_cast<const Type*>(this)->lengthImpl();
-    }
-
-    template <typename Type>
-    void Segment<Type>::printInfo() const {
-        static_cast<const Type*>(this)->printInfoImpl();
-    }
-
-    void printSegmentInfo(const Shape& segment) {
-        std::visit([](const auto& seg) { seg.printInfo(); }, segment);
+                  << " | Arc Length: " << lengthImpl() << '\n';
     }
 }
