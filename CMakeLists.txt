@@ -12,7 +12,7 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
 # add_library(COUNTOUR_LIB SHARED ${SOURCE_FILES})
 
-add_executable(${PROJECT_NAME} src/main.cpp) 
+add_executable(${PROJECT_NAME} src/main.cpp src/Segment.cpp) 
 
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/inc)
 

@@ -8,7 +8,8 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "/home/omar/development/scopic/src/main.cpp" "CMakeFiles/Contour.dir/src/main.cpp.o" "gcc" "CMakeFiles/Contour.dir/src/main.cpp.o.d"
+  "/home/omar/development/Scopic-Contour-Test/src/Segment.cpp" "CMakeFiles/Contour.dir/src/Segment.cpp.o" "gcc" "CMakeFiles/Contour.dir/src/Segment.cpp.o.d"
+  "/home/omar/development/Scopic-Contour-Test/src/main.cpp" "CMakeFiles/Contour.dir/src/main.cpp.o" "gcc" "CMakeFiles/Contour.dir/src/main.cpp.o.d"
   )
 
 # Targets to which this target links.

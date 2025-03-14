@@ -57,10 +57,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/omar/development/scopic
+CMAKE_SOURCE_DIR = /home/omar/development/Scopic-Contour-Test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/omar/development/scopic/build
+CMAKE_BINARY_DIR = /home/omar/development/Scopic-Contour-Test/build
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -87,9 +87,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/scopic/build/CMakeFiles /home/omar/development/scopic/build//CMakeFiles/progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles /home/omar/development/Scopic-Contour-Test/build//CMakeFiles/progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/scopic/build/CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -129,6 +129,30 @@ Contour/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/build
 .PHONY : Contour/fast
 
+src/Segment.o: src/Segment.cpp.o
+.PHONY : src/Segment.o
+
+# target to build an object file
+src/Segment.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Segment.cpp.o
+.PHONY : src/Segment.cpp.o
+
+src/Segment.i: src/Segment.cpp.i
+.PHONY : src/Segment.i
+
+# target to preprocess a source file
+src/Segment.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Segment.cpp.i
+.PHONY : src/Segment.cpp.i
+
+src/Segment.s: src/Segment.cpp.s
+.PHONY : src/Segment.s
+
+# target to generate assembly for a file
+src/Segment.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Segment.cpp.s
+.PHONY : src/Segment.cpp.s
+
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
 
@@ -162,6 +186,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Contour"
+	@echo "... src/Segment.o"
+	@echo "... src/Segment.i"
+	@echo "... src/Segment.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"

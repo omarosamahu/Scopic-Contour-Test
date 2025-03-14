@@ -1,1 +1,1 @@
-/usr/bin/c++ -rdynamic CMakeFiles/Contour.dir/src/main.cpp.o -o Contour 
+/usr/bin/c++ -rdynamic CMakeFiles/Contour.dir/src/main.cpp.o CMakeFiles/Contour.dir/src/Segment.cpp.o -o Contour 

@@ -53,10 +53,10 @@ RM = /usr/bin/cmake -E rm -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/omar/development/scopic
+CMAKE_SOURCE_DIR = /home/omar/development/Scopic-Contour-Test
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/omar/development/scopic/build
+CMAKE_BINARY_DIR = /home/omar/development/Scopic-Contour-Test/build
 
 # Include any dependencies generated for this target.
 include CMakeFiles/Contour.dir/depend.make
@@ -72,28 +72,44 @@ include CMakeFiles/Contour.dir/flags.make
 CMakeFiles/Contour.dir/src/main.cpp.o: CMakeFiles/Contour.dir/flags.make
 CMakeFiles/Contour.dir/src/main.cpp.o: ../src/main.cpp
 CMakeFiles/Contour.dir/src/main.cpp.o: CMakeFiles/Contour.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omar/development/scopic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Contour.dir/src/main.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Contour.dir/src/main.cpp.o -MF CMakeFiles/Contour.dir/src/main.cpp.o.d -o CMakeFiles/Contour.dir/src/main.cpp.o -c /home/omar/development/scopic/src/main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/Contour.dir/src/main.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Contour.dir/src/main.cpp.o -MF CMakeFiles/Contour.dir/src/main.cpp.o.d -o CMakeFiles/Contour.dir/src/main.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/main.cpp
 
 CMakeFiles/Contour.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Contour.dir/src/main.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/omar/development/scopic/src/main.cpp > CMakeFiles/Contour.dir/src/main.cpp.i
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/omar/development/Scopic-Contour-Test/src/main.cpp > CMakeFiles/Contour.dir/src/main.cpp.i
 
 CMakeFiles/Contour.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Contour.dir/src/main.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/omar/development/scopic/src/main.cpp -o CMakeFiles/Contour.dir/src/main.cpp.s
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/omar/development/Scopic-Contour-Test/src/main.cpp -o CMakeFiles/Contour.dir/src/main.cpp.s
+
+CMakeFiles/Contour.dir/src/Segment.cpp.o: CMakeFiles/Contour.dir/flags.make
+CMakeFiles/Contour.dir/src/Segment.cpp.o: ../src/Segment.cpp
+CMakeFiles/Contour.dir/src/Segment.cpp.o: CMakeFiles/Contour.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/Contour.dir/src/Segment.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/Contour.dir/src/Segment.cpp.o -MF CMakeFiles/Contour.dir/src/Segment.cpp.o.d -o CMakeFiles/Contour.dir/src/Segment.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Segment.cpp
+
+CMakeFiles/Contour.dir/src/Segment.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/Contour.dir/src/Segment.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/omar/development/Scopic-Contour-Test/src/Segment.cpp > CMakeFiles/Contour.dir/src/Segment.cpp.i
+
+CMakeFiles/Contour.dir/src/Segment.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/Contour.dir/src/Segment.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/omar/development/Scopic-Contour-Test/src/Segment.cpp -o CMakeFiles/Contour.dir/src/Segment.cpp.s
 
 # Object files for target Contour
 Contour_OBJECTS = \
-"CMakeFiles/Contour.dir/src/main.cpp.o"
+"CMakeFiles/Contour.dir/src/main.cpp.o" \
+"CMakeFiles/Contour.dir/src/Segment.cpp.o"
 
 # External object files for target Contour
 Contour_EXTERNAL_OBJECTS =
 
 Contour: CMakeFiles/Contour.dir/src/main.cpp.o
+Contour: CMakeFiles/Contour.dir/src/Segment.cpp.o
 Contour: CMakeFiles/Contour.dir/build.make
 Contour: CMakeFiles/Contour.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/omar/development/scopic/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable Contour"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable Contour"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/Contour.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -105,6 +121,6 @@ CMakeFiles/Contour.dir/clean:
 .PHONY : CMakeFiles/Contour.dir/clean
 
 CMakeFiles/Contour.dir/depend:
-	cd /home/omar/development/scopic/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/omar/development/scopic /home/omar/development/scopic /home/omar/development/scopic/build /home/omar/development/scopic/build /home/omar/development/scopic/build/CMakeFiles/Contour.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/omar/development/Scopic-Contour-Test/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/omar/development/Scopic-Contour-Test /home/omar/development/Scopic-Contour-Test /home/omar/development/Scopic-Contour-Test/build /home/omar/development/Scopic-Contour-Test/build /home/omar/development/Scopic-Contour-Test/build/CMakeFiles/Contour.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/Contour.dir/depend
 

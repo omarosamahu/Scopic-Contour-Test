@@ -1,4 +1,6 @@
 file(REMOVE_RECURSE
+  "CMakeFiles/Contour.dir/src/Segment.cpp.o"
+  "CMakeFiles/Contour.dir/src/Segment.cpp.o.d"
   "CMakeFiles/Contour.dir/src/main.cpp.o"
   "CMakeFiles/Contour.dir/src/main.cpp.o.d"
   "Contour"

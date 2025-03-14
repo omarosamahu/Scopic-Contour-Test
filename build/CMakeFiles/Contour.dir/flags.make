@@ -4,7 +4,7 @@
 # compile CXX with /usr/bin/c++
 CXX_DEFINES = 
 
-CXX_INCLUDES = -I/home/omar/development/scopic/inc
+CXX_INCLUDES = -I/home/omar/development/Scopic-Contour-Test/inc
 
 CXX_FLAGS = 
 

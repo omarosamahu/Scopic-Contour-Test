@@ -1,6 +1,8 @@
 CMakeFiles/Contour.dir/src/main.cpp.o: \
- /home/omar/development/scopic/src/main.cpp /usr/include/stdc-predef.h \
- /home/omar/development/scopic/inc/Segment.h /usr/include/c++/11/cmath \
+ /home/omar/development/Scopic-Contour-Test/src/main.cpp \
+ /usr/include/stdc-predef.h \
+ /home/omar/development/Scopic-Contour-Test/inc/Segment.h \
+ /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/11/bits/os_defines.h \
  /usr/include/features.h /usr/include/features-time64.h \
