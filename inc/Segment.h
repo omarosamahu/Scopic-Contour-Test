@@ -5,6 +5,14 @@
 #include <iostream>
 #include <variant>
 
+// struct Point
+// {
+//     float X;
+//     float Y;
+
+//     bool operator==
+// };
+
 namespace Geometery{
     template <typename Type>
     class Segment {
