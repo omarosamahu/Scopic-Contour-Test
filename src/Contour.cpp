@@ -4,13 +4,16 @@
 namespace Geometery{
     void Countour::addSegment(const Shape &shape)
     {
+        if(!isValid(shape))
+        {
+            throw std::invalid_argument("Invalid Segment");
+        }
         mSegments.emplace_back(shape);
     }
-    bool Countour::removeSegment(const Shape &shape)
+    void Countour::removeSegment(const Shape &shape)
     {
         auto itr = std::find(mSegments.begin(), mSegments.end(), shape);
         mSegments.erase(itr);
-        return true;
     }
     bool Countour::isValid(const Shape &shape)
     {

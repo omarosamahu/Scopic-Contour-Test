@@ -11,7 +11,7 @@ public:
     Countour() = default;
     ~Countour() = default;
     void addSegment(const Shape &shape);
-    bool removeSegment(const Shape &shape);
+    void removeSegment(const Shape &shape);
     bool isValid(const Shape &shape);
 
 private:
