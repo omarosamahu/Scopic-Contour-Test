@@ -3,6 +3,7 @@
 
 #include <Segment.h>
 #include <unordered_set>
+#include <vector>
 
 namespace Geometery{
 class Countour{
@@ -14,7 +15,7 @@ public:
     bool isValid(const Shape &shape);
 
 private:
-    std::unordered_set<Shape> mSegments;
+    std::vector<Shape> mSegments;
 };
 }
 

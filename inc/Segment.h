@@ -10,6 +10,7 @@ struct Point
 {
     float X;
     float Y;
+    bool operator==(const Point& other) const { return X == other.X && Y == other.Y; }
 };
 
 namespace Geometery{
@@ -28,6 +29,8 @@ namespace Geometery{
         float lengthImpl() const;
         void printInfoImpl() const;
 
+        bool operator==(const Line& other) const { return p1 == other.p1 && p2 == other.p2; }
+
     private:
         Point p1;
         Point p2;
@@ -41,6 +44,10 @@ namespace Geometery{
 
         float lengthImpl() const;
         void printInfoImpl() const;
+
+        bool operator==(const Arc& other) const { 
+            return mCenter == other.mCenter && mRadius == other.mRadius && mStartAngle == other.mStartAngle && mEndAngle == other.mEndAngle; 
+        }
 
     private:
         Point mCenter;
