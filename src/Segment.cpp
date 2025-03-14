@@ -24,6 +24,18 @@ namespace Geometery{
                   << ", Angle: " << mAngle << " rad"
                   << " | Arc Length: " << lengthImpl() << std::endl;
     }
+
+    template <typename Type>
+    float Segment<Type>::length() const
+    {
+        return static_cast<const Type*>(this)->lengthImpl();
+    }
+
+    template <typename Type>
+    void Segment<Type>::printInfo() const {
+        static_cast<const Type*>(this)->printInfoImpl();
+    }
+
     void printSegmentInfo(const Shape& segment) {
         std::visit([](const auto& seg) { seg.printInfo(); }, segment);
     }

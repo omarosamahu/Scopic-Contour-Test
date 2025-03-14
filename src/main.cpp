@@ -2,6 +2,7 @@
 #include <vector>
 
 using namespace Geometery;
+
 int main(int argc, char const *argv[])
 {
     Shape line = Line(0, 0, 3, 4);

@@ -432,7 +432,8 @@ CMakeFiles/Contour.dir/src/main.cpp.o: ../src/main.cpp \
   /usr/include/c++/11/bits/stl_uninitialized.h \
   /usr/include/c++/11/bits/stl_vector.h \
   /usr/include/c++/11/bits/stl_bvector.h \
-  /usr/include/c++/11/bits/vector.tcc
+  /usr/include/c++/11/bits/vector.tcc \
+  ../inc/Line.h
 
 
 /usr/include/c++/11/bits/vector.tcc:
@@ -846,6 +847,8 @@ CMakeFiles/Contour.dir/src/main.cpp.o: ../src/main.cpp \
 /usr/include/x86_64-linux-gnu/bits/floatn-common.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/wint_t.h:
+
+../inc/Line.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h:
 

@@ -3,12 +3,12 @@ project(Contour)
 
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 
-# set(SOURCE_FILES
-#     # src/Arc.cpp
-#     # src/Contour.cpp
-#     # src/Line.cpp
-#     src/Segment.cpp
-#     )
+set(SOURCE_FILES
+    # src/Arc.cpp
+    # src/Contour.cpp
+    # src/Line.cpp
+    src/Segment.cpp
+    )
 
 # add_library(COUNTOUR_LIB SHARED ${SOURCE_FILES})
 

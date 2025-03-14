@@ -5,25 +5,12 @@
 #include <iostream>
 #include <variant>
 
-// struct Point
-// {
-//     float X;
-//     float Y;
-
-//     bool operator==
-// };
-
 namespace Geometery{
     template <typename Type>
     class Segment {
     public:
-        float length() const {
-            return static_cast<const Type*>(this)->lengthImpl();
-        }
-    
-        void printInfo() const {
-            static_cast<const Type*>(this)->printInfoImpl();
-        }
+        float length() const;
+        void printInfo() const;
     };
     
     class Line : public Segment<Line> {
@@ -32,7 +19,7 @@ namespace Geometery{
     
         float lengthImpl() const;
         void printInfoImpl() const;
-    
+
     private:
         float X1;
         float X2;
