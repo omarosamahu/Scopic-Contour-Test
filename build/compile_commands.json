@@ -6,6 +6,11 @@
 },
 {
   "directory": "/home/omar/development/Scopic-Contour-Test/build",
+  "command": "/usr/bin/c++  -I/home/omar/development/Scopic-Contour-Test/inc  -o CMakeFiles/Contour.dir/src/Contour.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Contour.cpp",
+  "file": "/home/omar/development/Scopic-Contour-Test/src/Contour.cpp"
+},
+{
+  "directory": "/home/omar/development/Scopic-Contour-Test/build",
   "command": "/usr/bin/c++  -I/home/omar/development/Scopic-Contour-Test/inc  -o CMakeFiles/Contour.dir/src/Segment.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Segment.cpp",
   "file": "/home/omar/development/Scopic-Contour-Test/src/Segment.cpp"
 }

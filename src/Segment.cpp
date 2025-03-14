@@ -1,27 +1,28 @@
 #include <Segment.h>
 namespace Geometery{
-    Line::Line(float x1, float y1, float x2, float y2)
-        : X1{x1}, Y1{y1}, X2{x2}, Y2{y2} {}
+    Line::Line(const Point& start, const Point& end)
+        : p1{start}, p2{end} {}
     
     float Line::lengthImpl() const {
-        return std::sqrt(std::pow((X2 - X1), 2) + std::pow((Y2 - Y1), 2));
+        return std::sqrt(std::pow((p2.X - p1.X), 2) + std::pow((p2.Y - p1.Y), 2));
     }
     
     void Line::printInfoImpl() const {
-        std::cout << "Line Segment: (" << X1 << ", " << Y1 << ") -> (" << X2 << ", " << Y2 << ")"
+        std::cout << "Line Segment: (" << p1.X << ", " << p1.Y << ") -> (" << p2.X << ", " << p2.Y << ")"
                   << " | Length: " << lengthImpl() << '\n';
     }
     
-    Arc::Arc(float cx, float cy, float radius, float angle)
-        : mCx{cx}, mCy{cy}, mRadius{radius}, mAngle{angle} {}
+    Arc::Arc(const Point& center, float radius, float start_angle, float end_angle)
+        : mCenter{center}, mRadius{radius}, mStartAngle{start_angle},mEndAngle{end_angle} {}
     
     float Arc::lengthImpl() const {
-        return mRadius * mAngle; // Arc length formula
+        float theta = (mEndAngle - mStartAngle) * M_PI / 180.0;
+        return mRadius * theta; // Arc length formula
     }
     
     void Arc::printInfoImpl() const {
-        std::cout << "Arc Segment: Center (" << mCx << ", " << mCy << "), Radius: " << mRadius
-                  << ", Angle: " << mAngle << " rad"
+        std::cout << "Arc Segment: Center (" << mCenter.X << ", " << mCenter.Y << "), Radius: " << mRadius
+                  << ", Angle: " << (mEndAngle - mStartAngle) << " rad"
                   << " | Arc Length: " << lengthImpl() << std::endl;
     }
 

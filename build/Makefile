@@ -129,6 +129,30 @@ Contour/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/build
 .PHONY : Contour/fast
 
+src/Contour.o: src/Contour.cpp.o
+.PHONY : src/Contour.o
+
+# target to build an object file
+src/Contour.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Contour.cpp.o
+.PHONY : src/Contour.cpp.o
+
+src/Contour.i: src/Contour.cpp.i
+.PHONY : src/Contour.i
+
+# target to preprocess a source file
+src/Contour.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Contour.cpp.i
+.PHONY : src/Contour.cpp.i
+
+src/Contour.s: src/Contour.cpp.s
+.PHONY : src/Contour.s
+
+# target to generate assembly for a file
+src/Contour.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Contour.cpp.s
+.PHONY : src/Contour.cpp.s
+
 src/Segment.o: src/Segment.cpp.o
 .PHONY : src/Segment.o
 
@@ -186,6 +210,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... Contour"
+	@echo "... src/Contour.o"
+	@echo "... src/Contour.i"
+	@echo "... src/Contour.s"
 	@echo "... src/Segment.o"
 	@echo "... src/Segment.i"
 	@echo "... src/Segment.s"

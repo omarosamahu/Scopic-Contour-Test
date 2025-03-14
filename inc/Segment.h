@@ -1,9 +1,16 @@
+
 #ifndef SEGMENT_H
 #define SEGMENT_H
 
 #include <cmath>
 #include <iostream>
 #include <variant>
+
+struct Point
+{
+    float X;
+    float Y;
+};
 
 namespace Geometery{
     template <typename Type>
@@ -15,32 +22,31 @@ namespace Geometery{
     
     class Line : public Segment<Line> {
     public:
-        Line(float x1, float y1, float x2, float y2);
-    
+        Line() = default;
+        Line(const Point& start, const Point& end);
+
         float lengthImpl() const;
         void printInfoImpl() const;
 
     private:
-        float X1;
-        float X2;
-        float Y1;
-        float Y2;
+        Point p1;
+        Point p2;
     };
     
-    // Arc Segment Specialization
+
     class Arc : public Segment<Arc> {
     public:
-        Arc(float cx, float cy, float radius, float angle);
-    
+        Arc() = default;
+        Arc(const Point& center, float radius, float start_angle, float end_angle);
+
         float lengthImpl() const;
-    
         void printInfoImpl() const;
-    
+
     private:
-        float mCx;
-        float mCy;
+        Point mCenter;
         float mRadius;
-        float mAngle; // Angle in radians
+        float mStartAngle;
+        float mEndAngle;
     };
     
     using Shape = std::variant<Line, Arc>;
