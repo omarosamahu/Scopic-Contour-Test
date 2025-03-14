@@ -1,0 +1,1 @@
+/usr/bin/c++ -fPIC -shared -Wl,-soname,libCOUNTOUR_LIB.so -o libCOUNTOUR_LIB.so CMakeFiles/COUNTOUR_LIB.dir/src/Segment.cpp.o 

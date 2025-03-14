@@ -1,0 +1,7 @@
+[
+{
+  "directory": "/home/omar/development/scopic/build",
+  "command": "/usr/bin/c++  -I/home/omar/development/scopic/inc  -o CMakeFiles/Contour.dir/src/main.cpp.o -c /home/omar/development/scopic/src/main.cpp",
+  "file": "/home/omar/development/scopic/src/main.cpp"
+}
+]
