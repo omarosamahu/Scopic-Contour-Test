@@ -9,12 +9,11 @@
 
 namespace Geometery{
 using Shape = std::variant<Line, Arc>;
-class Countour{
-    bool isApproxEqual() const;
-
+class Countour
+{
 public:
     Countour() = default;
-    explicit Countour(double epsilon = 1e-6);
+    explicit Countour(double epsilon);
     ~Countour() = default;
     void addSegment(const Shape &shape);
     void insertSegment(const Shape &shape, size_t index);

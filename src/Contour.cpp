@@ -2,11 +2,6 @@
 
 namespace Geometery
 {
-    bool Countour::isApproxEqual() const
-    {
-        return false;
-    }
-
     Countour::Countour(double epsilon) : epsilon{epsilon}
     {
     }
@@ -42,7 +37,7 @@ namespace Geometery
 
             auto currentSegmentStart = std::visit([](const auto &seg) -> Point
                                                   { return seg.getStartPoint(); }, segments[i]);
-            if (!prevSgmentEnd.isApproxEqual(currentSegmentStart, epsilon))
+            if (!prevSgmentEnd.isCloseTo(currentSegmentStart, epsilon))
             {
                 std::cerr << "This contour is not valid\n";
                 return false;

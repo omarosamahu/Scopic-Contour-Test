@@ -11,7 +11,7 @@ struct Point
     Point(double x, double y) : X{x}, Y{y} {}
 
     bool operator==(const Point& other) const { return X == other.X && Y == other.Y; }
-    bool isApproxEqual(const Point &other, double epsilon) const
+    bool isCloseTo(const Point &other, double epsilon) const
     {
         return std::abs(X - other.X) < epsilon && std::abs(Y - other.Y) < epsilon;
     }
