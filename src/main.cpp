@@ -26,5 +26,10 @@ int main(int argc, char const *argv[])
     cPtr1->printSegmentInfo();
     cPtr1->isValid(line);
 
+    if (!cPtr)
+    {
+        std::cout << "Null\n";
+    }
+
     return 0;
 }
