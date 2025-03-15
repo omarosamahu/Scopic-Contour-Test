@@ -23,7 +23,7 @@ namespace Geometery
         segments.erase(itr);
     }
 
-    bool Countour::isValid(const std::shared_ptr<Shape> &shape)
+    bool Countour::isValid(const std::shared_ptr<Shape> &shape) const
     {
         if (segments.size() == 0)
         {
@@ -48,7 +48,7 @@ namespace Geometery
         return true;
     }
 
-    std::shared_ptr<Line> Countour::editLine(const std::shared_ptr<Shape> &shape)
+    std::shared_ptr<Line> Countour::getLine(const std::shared_ptr<Shape> &shape)
     {
         auto itr = std::find(segments.begin(), segments.end(), shape);
 

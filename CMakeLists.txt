@@ -18,8 +18,13 @@ add_executable(${PROJECT_NAME} src/main.cpp)
 target_link_libraries(${PROJECT_NAME} PUBLIC CONTOUR_LIB)
 
 install(TARGETS CONTOUR_LIB
-    ARCHIVE DESTINATION lib    
+    ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib    
     RUNTIME DESTINATION bin
+)
+
+install(DIRECTORY inc/
+    DESTINATION include
+    FILES_MATCHING PATTERN "*.h"
 )
 
