@@ -10,13 +10,18 @@
 namespace Geometery{
 using Shape = std::variant<Line, Arc>;
 class Countour{
+    bool isApproxEqual() const;
+
 public:
     Countour() = default;
+    explicit Countour(double epsilon = 1e-6);
     ~Countour() = default;
     void addSegment(const Shape &shape);
+    void insertSegment(const Shape &shape, size_t index);
     void removeSegment(const Shape &shape);
-    void printSegmentInfo();
+    void printSegmentInfo() const;
     bool isValid(const Shape &shape);
+    void updateBorders(const Point &point);
 
     // This is a simple implementation for getting a pointer to Line Shape
     // It's no longer needed since we are using the below template function.
@@ -25,8 +30,8 @@ public:
     template <typename T>
     inline std::shared_ptr<T> getShapePointer(const Shape &shape)
     {
-        auto itr = std::find(mSegments.begin(), mSegments.end(), shape);
-        if (itr == mSegments.end())
+        auto itr = std::find(segments.begin(), segments.end(), shape);
+        if (itr == segments.end())
         {
             std::cerr << "This shape is not found\n";
             return nullptr;
@@ -44,7 +49,10 @@ public:
     }
 
 private:
-    std::vector<Shape> mSegments;
+    double epsilon;
+    Point current_start;
+    Point current_end;
+    std::vector<Shape> segments;
 };
 }
 
