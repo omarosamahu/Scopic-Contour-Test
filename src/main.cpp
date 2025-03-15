@@ -12,8 +12,14 @@ int main(int argc, char const *argv[])
 
     cont.addSegment(line);
     cont.addSegment(arc);
- 
+
+    std::shared_ptr<Line> ptr = cont.getShapePointer<Line>(line);
+
+    Point p;
+    p.X = 65.0;
+    p.Y = 21.0;
+    ptr->setStartPoint(p);
+
     cont.printSegmentInfo();
-    
     return 0;
 }

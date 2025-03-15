@@ -7,9 +7,13 @@
 
 struct Point
 {
+    Point() = default;
+    Point(float x, float y) : X{x}, Y{y} {}
+
+    bool operator==(const Point& other) const { return X == other.X && Y == other.Y; }
+
     float X;
     float Y;
-    bool operator==(const Point& other) const { return X == other.X && Y == other.Y; }
 };
 
 namespace Geometery{
