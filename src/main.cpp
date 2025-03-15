@@ -14,7 +14,7 @@ int main(int argc, char const *argv[])
     cPtr->addSegment(line);
     cPtr->addSegment(arc);
 
-    auto cPtr1 = cPtr;
+    auto cPtr1 = std::move(cPtr);
 
     std::shared_ptr<Line> ptr = cPtr1->getShapePointer<Line>(line);
 
