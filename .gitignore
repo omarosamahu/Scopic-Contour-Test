@@ -1,0 +1,16 @@
+# Ignore compiled object files
+*.o
+*.obj
+*.so
+*.dll
+*.dylib
+*.a
+*.lib
+build/
+
+
+# Ignore compiled binaries
+*.exe
+*.out
+*.app
+*.elf

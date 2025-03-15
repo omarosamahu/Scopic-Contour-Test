@@ -63,6 +63,7 @@ CMAKE_BINARY_DIR = /home/omar/development/Scopic-Contour-Test/build
 # Directory level rules for the build root directory
 
 # The main recursive "all" target.
+all: CMakeFiles/CONTOUR_LIB.dir/all
 all: CMakeFiles/Contour.dir/all
 .PHONY : all
 
@@ -71,22 +72,49 @@ preinstall:
 .PHONY : preinstall
 
 # The main recursive "clean" target.
+clean: CMakeFiles/CONTOUR_LIB.dir/clean
 clean: CMakeFiles/Contour.dir/clean
 .PHONY : clean
+
+#=============================================================================
+# Target rules for target CMakeFiles/CONTOUR_LIB.dir
+
+# All Build rule for target.
+CMakeFiles/CONTOUR_LIB.dir/all:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/depend
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=1,2,3,4 "Built target CONTOUR_LIB"
+.PHONY : CMakeFiles/CONTOUR_LIB.dir/all
+
+# Build rule for subdir invocation for target.
+CMakeFiles/CONTOUR_LIB.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 4
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/CONTOUR_LIB.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 0
+.PHONY : CMakeFiles/CONTOUR_LIB.dir/rule
+
+# Convenience name for target.
+CONTOUR_LIB: CMakeFiles/CONTOUR_LIB.dir/rule
+.PHONY : CONTOUR_LIB
+
+# clean rule for target.
+CMakeFiles/CONTOUR_LIB.dir/clean:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/clean
+.PHONY : CMakeFiles/CONTOUR_LIB.dir/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/Contour.dir
 
 # All Build rule for target.
-CMakeFiles/Contour.dir/all:
+CMakeFiles/Contour.dir/all: CMakeFiles/CONTOUR_LIB.dir/all
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/depend
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/build
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=1,2,3,4 "Built target Contour"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=5,6 "Built target Contour"
 .PHONY : CMakeFiles/Contour.dir/all
 
 # Build rule for subdir invocation for target.
 CMakeFiles/Contour.dir/rule: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 4
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 6
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CMakeFiles/Contour.dir/all
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 0
 .PHONY : CMakeFiles/Contour.dir/rule

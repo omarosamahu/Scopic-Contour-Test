@@ -1,11 +1,12 @@
 #ifndef CONTOUR_H
 #define CONTOUR_H
 
-#include <Segment.h>
-#include <unordered_set>
+#include <Line.h>
+#include <Arc.h>
 #include <vector>
 
 namespace Geometery{
+using Shape = std::variant<Line, Arc>;
 class Countour{
 public:
     Countour() = default;
@@ -13,6 +14,7 @@ public:
     void addSegment(const Shape &shape);
     void removeSegment(const Shape &shape);
     bool isValid(const Shape &shape);
+    void printSegmentInfo();
 
 private:
     std::vector<Shape> mSegments;

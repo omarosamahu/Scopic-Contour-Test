@@ -1,6 +1,8 @@
 CMakeFiles/Contour.dir/src/main.cpp.o: \
  /home/omar/development/Scopic-Contour-Test/src/main.cpp \
  /usr/include/stdc-predef.h \
+ /home/omar/development/Scopic-Contour-Test/inc/Contour.h \
+ /home/omar/development/Scopic-Contour-Test/inc/Line.h \
  /home/omar/development/Scopic-Contour-Test/inc/Segment.h \
  /usr/include/c++/11/cmath \
  /usr/include/x86_64-linux-gnu/c++/11/bits/c++config.h \
@@ -175,8 +177,9 @@ CMakeFiles/Contour.dir/src/main.cpp.o: \
  /usr/include/c++/11/bits/enable_special_members.h \
  /usr/include/c++/11/bits/invoke.h \
  /usr/include/c++/11/ext/aligned_buffer.h \
- /usr/include/c++/11/bits/parse_numbers.h /usr/include/c++/11/vector \
- /usr/include/c++/11/bits/stl_uninitialized.h \
+ /usr/include/c++/11/bits/parse_numbers.h \
+ /home/omar/development/Scopic-Contour-Test/inc/Arc.h \
+ /usr/include/c++/11/vector /usr/include/c++/11/bits/stl_uninitialized.h \
  /usr/include/c++/11/bits/stl_vector.h \
  /usr/include/c++/11/bits/stl_bvector.h \
  /usr/include/c++/11/bits/vector.tcc /usr/include/c++/11/algorithm \

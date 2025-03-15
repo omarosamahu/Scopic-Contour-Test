@@ -17,6 +17,12 @@ namespace Geometery{
     }
     bool Countour::isValid(const Shape &shape)
     {
-        return false;
+        return true;
+    }
+
+    void Countour::printSegmentInfo() {
+        for(const auto& segment : mSegments){
+            std::visit([](const auto& seg) { seg.printInfo(); }, segment);
+        }
     }
 }

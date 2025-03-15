@@ -1,17 +1,22 @@
 [
 {
   "directory": "/home/omar/development/Scopic-Contour-Test/build",
-  "command": "/usr/bin/c++  -I/home/omar/development/Scopic-Contour-Test/inc  -o CMakeFiles/Contour.dir/src/main.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/main.cpp",
-  "file": "/home/omar/development/Scopic-Contour-Test/src/main.cpp"
+  "command": "/usr/bin/c++ -DCONTOUR_LIB_EXPORTS -I/home/omar/development/Scopic-Contour-Test/inc -fPIC -o CMakeFiles/CONTOUR_LIB.dir/src/Arc.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Arc.cpp",
+  "file": "/home/omar/development/Scopic-Contour-Test/src/Arc.cpp"
 },
 {
   "directory": "/home/omar/development/Scopic-Contour-Test/build",
-  "command": "/usr/bin/c++  -I/home/omar/development/Scopic-Contour-Test/inc  -o CMakeFiles/Contour.dir/src/Contour.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Contour.cpp",
+  "command": "/usr/bin/c++ -DCONTOUR_LIB_EXPORTS -I/home/omar/development/Scopic-Contour-Test/inc -fPIC -o CMakeFiles/CONTOUR_LIB.dir/src/Line.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Line.cpp",
+  "file": "/home/omar/development/Scopic-Contour-Test/src/Line.cpp"
+},
+{
+  "directory": "/home/omar/development/Scopic-Contour-Test/build",
+  "command": "/usr/bin/c++ -DCONTOUR_LIB_EXPORTS -I/home/omar/development/Scopic-Contour-Test/inc -fPIC -o CMakeFiles/CONTOUR_LIB.dir/src/Contour.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Contour.cpp",
   "file": "/home/omar/development/Scopic-Contour-Test/src/Contour.cpp"
 },
 {
   "directory": "/home/omar/development/Scopic-Contour-Test/build",
-  "command": "/usr/bin/c++  -I/home/omar/development/Scopic-Contour-Test/inc  -o CMakeFiles/Contour.dir/src/Segment.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/Segment.cpp",
-  "file": "/home/omar/development/Scopic-Contour-Test/src/Segment.cpp"
+  "command": "/usr/bin/c++  -I/home/omar/development/Scopic-Contour-Test/inc  -o CMakeFiles/Contour.dir/src/main.cpp.o -c /home/omar/development/Scopic-Contour-Test/src/main.cpp",
+  "file": "/home/omar/development/Scopic-Contour-Test/src/main.cpp"
 }
 ]

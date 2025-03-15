@@ -85,6 +85,51 @@ rebuild_cache:
 rebuild_cache/fast: rebuild_cache
 .PHONY : rebuild_cache/fast
 
+# Special rule for the target list_install_components
+list_install_components:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Available install components are: \"Unspecified\""
+.PHONY : list_install_components
+
+# Special rule for the target list_install_components
+list_install_components/fast: list_install_components
+.PHONY : list_install_components/fast
+
+# Special rule for the target install
+install: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install
+
+# Special rule for the target install
+install/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Install the project..."
+	/usr/bin/cmake -P cmake_install.cmake
+.PHONY : install/fast
+
+# Special rule for the target install/local
+install/local: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local
+
+# Special rule for the target install/local
+install/local/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing only the local directory..."
+	/usr/bin/cmake -DCMAKE_INSTALL_LOCAL_ONLY=1 -P cmake_install.cmake
+.PHONY : install/local/fast
+
+# Special rule for the target install/strip
+install/strip: preinstall
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip
+
+# Special rule for the target install/strip
+install/strip/fast: preinstall/fast
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
+	/usr/bin/cmake -DCMAKE_INSTALL_DO_STRIP=1 -P cmake_install.cmake
+.PHONY : install/strip/fast
+
 # The main all target
 all: cmake_check_build_system
 	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles /home/omar/development/Scopic-Contour-Test/build//CMakeFiles/progress.marks
@@ -117,6 +162,19 @@ depend:
 .PHONY : depend
 
 #=============================================================================
+# Target rules for targets named CONTOUR_LIB
+
+# Build rule for target.
+CONTOUR_LIB: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 CONTOUR_LIB
+.PHONY : CONTOUR_LIB
+
+# fast build rule for target.
+CONTOUR_LIB/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/build
+.PHONY : CONTOUR_LIB/fast
+
+#=============================================================================
 # Target rules for targets named Contour
 
 # Build rule for target.
@@ -129,12 +187,36 @@ Contour/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/build
 .PHONY : Contour/fast
 
+src/Arc.o: src/Arc.cpp.o
+.PHONY : src/Arc.o
+
+# target to build an object file
+src/Arc.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Arc.cpp.o
+.PHONY : src/Arc.cpp.o
+
+src/Arc.i: src/Arc.cpp.i
+.PHONY : src/Arc.i
+
+# target to preprocess a source file
+src/Arc.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Arc.cpp.i
+.PHONY : src/Arc.cpp.i
+
+src/Arc.s: src/Arc.cpp.s
+.PHONY : src/Arc.s
+
+# target to generate assembly for a file
+src/Arc.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Arc.cpp.s
+.PHONY : src/Arc.cpp.s
+
 src/Contour.o: src/Contour.cpp.o
 .PHONY : src/Contour.o
 
 # target to build an object file
 src/Contour.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Contour.cpp.o
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Contour.cpp.o
 .PHONY : src/Contour.cpp.o
 
 src/Contour.i: src/Contour.cpp.i
@@ -142,7 +224,7 @@ src/Contour.i: src/Contour.cpp.i
 
 # target to preprocess a source file
 src/Contour.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Contour.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Contour.cpp.i
 .PHONY : src/Contour.cpp.i
 
 src/Contour.s: src/Contour.cpp.s
@@ -150,32 +232,32 @@ src/Contour.s: src/Contour.cpp.s
 
 # target to generate assembly for a file
 src/Contour.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Contour.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Contour.cpp.s
 .PHONY : src/Contour.cpp.s
 
-src/Segment.o: src/Segment.cpp.o
-.PHONY : src/Segment.o
+src/Line.o: src/Line.cpp.o
+.PHONY : src/Line.o
 
 # target to build an object file
-src/Segment.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Segment.cpp.o
-.PHONY : src/Segment.cpp.o
+src/Line.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Line.cpp.o
+.PHONY : src/Line.cpp.o
 
-src/Segment.i: src/Segment.cpp.i
-.PHONY : src/Segment.i
+src/Line.i: src/Line.cpp.i
+.PHONY : src/Line.i
 
 # target to preprocess a source file
-src/Segment.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Segment.cpp.i
-.PHONY : src/Segment.cpp.i
+src/Line.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Line.cpp.i
+.PHONY : src/Line.cpp.i
 
-src/Segment.s: src/Segment.cpp.s
-.PHONY : src/Segment.s
+src/Line.s: src/Line.cpp.s
+.PHONY : src/Line.s
 
 # target to generate assembly for a file
-src/Segment.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/src/Segment.cpp.s
-.PHONY : src/Segment.cpp.s
+src/Line.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/CONTOUR_LIB.dir/build.make CMakeFiles/CONTOUR_LIB.dir/src/Line.cpp.s
+.PHONY : src/Line.cpp.s
 
 src/main.o: src/main.cpp.o
 .PHONY : src/main.o
@@ -208,14 +290,22 @@ help:
 	@echo "... clean"
 	@echo "... depend"
 	@echo "... edit_cache"
+	@echo "... install"
+	@echo "... install/local"
+	@echo "... install/strip"
+	@echo "... list_install_components"
 	@echo "... rebuild_cache"
+	@echo "... CONTOUR_LIB"
 	@echo "... Contour"
+	@echo "... src/Arc.o"
+	@echo "... src/Arc.i"
+	@echo "... src/Arc.s"
 	@echo "... src/Contour.o"
 	@echo "... src/Contour.i"
 	@echo "... src/Contour.s"
-	@echo "... src/Segment.o"
-	@echo "... src/Segment.i"
-	@echo "... src/Segment.s"
+	@echo "... src/Line.o"
+	@echo "... src/Line.i"
+	@echo "... src/Line.s"
 	@echo "... src/main.o"
 	@echo "... src/main.i"
 	@echo "... src/main.s"
