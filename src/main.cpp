@@ -8,28 +8,32 @@ int main(int argc, char const *argv[])
     Shape line = Line({9.0, 6.0}, {3.0, 4.0});
     Shape arc = Arc({0.0, 0.0}, 5.0, 30,90);
 
-    // Countour cont(1e-6);
+    auto linePtr = std::make_shared<Shape>(line);
+    auto arcPtr = std::make_shared<Shape>(arc);
+
     auto cPtr = std::make_shared<Countour>(1e-6);
 
-    cPtr->addSegment(line);
-    cPtr->addSegment(arc);
+    cPtr->addSegment(linePtr);
+    cPtr->addSegment(arcPtr);
 
-    auto cPtr1 = std::move(cPtr);
+    auto cPtr1 = cPtr;
 
-    std::shared_ptr<Line> ptr = cPtr1->getShapePointer<Line>(line);
+    std::cout << cPtr.use_count() << "\n";
+
+    std::shared_ptr<Line> ptr = cPtr->getShapePointer<Line>(linePtr);
 
     Point p;
-    p.X = 65.0;
-    p.Y = 21.0;
+    p.X = 5.0;
+    p.Y = 25.0;
     ptr->setStartPoint(p);
 
-    cPtr1->printSegmentInfo();
-    cPtr1->isValid(line);
+    cPtr->printSegmentInfo();
+    cPtr->isValid(linePtr);
 
-    if (!cPtr)
-    {
-        std::cout << "Null\n";
-    }
+    // if (!cPtr)
+    // {
+    //     std::cout << "Null\n";
+    // }
 
     return 0;
 }

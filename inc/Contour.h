@@ -15,19 +15,18 @@ public:
     Countour() = default;
     explicit Countour(double epsilon);
     ~Countour() = default;
-    void addSegment(const Shape &shape);
-    void insertSegment(const Shape &shape, size_t index);
-    void removeSegment(const Shape &shape);
+    void addSegment(const std::shared_ptr<Shape> &shape);
+    void insertSegment(const std::shared_ptr<Shape> &shape, size_t index);
+    void removeSegment(const std::shared_ptr<Shape> &shape);
     void printSegmentInfo() const;
-    bool isValid(const Shape &shape);
-    void updateBorders(const Point &point);
+    bool isValid(const std::shared_ptr<Shape> &shape);
 
     // This is a simple implementation for getting a pointer to Line Shape
     // It's no longer needed since we are using the below template function.
-    std::shared_ptr<Line> editLine(const Shape &shape);
+    std::shared_ptr<Line> editLine(const std::shared_ptr<Shape> &shape);
 
     template <typename T>
-    inline std::shared_ptr<T> getShapePointer(const Shape &shape)
+    inline std::shared_ptr<T> getShapePointer(const std::shared_ptr<Shape> &shape)
     {
         auto itr = std::find(segments.begin(), segments.end(), shape);
         if (itr == segments.end())
@@ -42,16 +41,13 @@ public:
                               {
                                   return std::shared_ptr<T>(&value, [](T *) {});
                               }
-                              return nullptr; // Type mismatch
-                          },
-                          *itr);
+                              return nullptr; },
+                          **itr);
     }
 
 private:
     double epsilon;
-    Point current_start;
-    Point current_end;
-    std::vector<Shape> segments;
+    std::vector<std::shared_ptr<Shape>> segments;
 };
 }
 

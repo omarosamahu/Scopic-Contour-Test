@@ -6,37 +6,38 @@ namespace Geometery
     {
     }
 
-    void Countour::addSegment(const Shape &shape)
+    void Countour::addSegment(const std::shared_ptr<Shape> &shape)
     {
-
-        if (segments.size() == 0)
-        {
-            current_start = std::visit([](const auto &seg) -> Point
-                                       { return seg.getStartPoint(); }, shape);
-        }
         segments.emplace_back(shape);
     }
 
-    void Countour::insertSegment(const Shape &shape, size_t index)
+    void Countour::insertSegment(const std::shared_ptr<Shape> &shape, size_t index)
     {
         // To do check if the shape is already exist or not
         segments.insert(segments.begin() + index, shape);
     }
-    void Countour::removeSegment(const Shape &shape)
+
+    void Countour::removeSegment(const std::shared_ptr<Shape> &shape)
     {
         auto itr = std::find(segments.begin(), segments.end(), shape);
         segments.erase(itr);
     }
 
-    bool Countour::isValid(const Shape &shape)
+    bool Countour::isValid(const std::shared_ptr<Shape> &shape)
     {
+        if (segments.size() == 0)
+        {
+            std::cerr << "No segements added yet\n";
+            return false;
+        }
+
         for (size_t i{1U}; i < segments.size(); i++)
         {
             auto prevSgmentEnd = std::visit([](const auto &seg) -> Point
-                                            { return seg.getEndPoint(); }, segments[i - 1]);
+                                            { return seg.getEndPoint(); }, *segments[i - 1]);
 
             auto currentSegmentStart = std::visit([](const auto &seg) -> Point
-                                                  { return seg.getStartPoint(); }, segments[i]);
+                                                  { return seg.getStartPoint(); }, *segments[i]);
             if (!prevSgmentEnd.isCloseTo(currentSegmentStart, epsilon))
             {
                 std::cerr << "This contour is not valid\n";
@@ -47,12 +48,7 @@ namespace Geometery
         return true;
     }
 
-    void Countour::updateBorders(const Point &point)
-    {
-        this->current_end = point;
-    }
-
-    std::shared_ptr<Line> Countour::editLine(const Shape &shape)
+    std::shared_ptr<Line> Countour::editLine(const std::shared_ptr<Shape> &shape)
     {
         auto itr = std::find(segments.begin(), segments.end(), shape);
 
@@ -61,7 +57,7 @@ namespace Geometery
             std::cout << "Shape is not found\n";
             return nullptr;
         }
-        Line *ptr = std::get_if<Line>(&(*itr));
+        Line *ptr = std::get_if<Line>(itr->get());
 
         if (!ptr)
         {
@@ -75,7 +71,8 @@ namespace Geometery
     {
         for (const auto &segment : segments)
         {
-            std::visit([](const auto& seg) { seg.printInfo(); }, segment);
+            std::visit([](const auto &seg)
+                       { seg.printInfo(); }, *segment);
         }
     }
 }
