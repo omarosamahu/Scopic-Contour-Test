@@ -19,7 +19,7 @@ public:
     void insertSegment(const std::shared_ptr<Shape> &shape, size_t index);
     void removeSegment(const std::shared_ptr<Shape> &shape);
     void printSegmentInfo() const;
-    bool isValid(const std::shared_ptr<Shape> &shape) const;
+    bool isValid() const;
 
     // This is a simple implementation for getting a pointer to Line Shape
     // It's no longer needed since we are using the below template function.

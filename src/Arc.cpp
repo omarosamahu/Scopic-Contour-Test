@@ -18,12 +18,12 @@ namespace Geometery
 
     Point Arc::getStartPointImpl() const
     {
-        return {mCenter.X + mRadius * std::cos(mStartAngle), mCenter.Y + mRadius * std::sin(mStartAngle)};
+        return {mCenter.X + mRadius * std::cos(mStartAngle * M_PI / 180), mCenter.Y + mRadius * std::sin(mStartAngle * M_PI / 180)};
     }
 
     Point Arc::getEndPointImpl() const
     {
-        return {mCenter.X + mRadius * std::cos(mEndAngle), mCenter.Y + mRadius * std::sin(mEndAngle)};
+        return {mCenter.X + mRadius * std::cos(mEndAngle * M_PI / 180), mCenter.Y + mRadius * std::sin(mEndAngle * M_PI / 180)};
     }
 
     void Arc::setCenter(const Point &center)

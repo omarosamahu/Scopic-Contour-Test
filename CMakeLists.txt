@@ -17,6 +17,8 @@ add_executable(${PROJECT_NAME} src/main.cpp)
 
 target_link_libraries(${PROJECT_NAME} PUBLIC CONTOUR_LIB)
 
+add_subdirectory(test)
+
 install(TARGETS CONTOUR_LIB
     ARCHIVE DESTINATION lib
     LIBRARY DESTINATION lib    

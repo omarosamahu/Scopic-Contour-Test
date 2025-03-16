@@ -187,6 +187,19 @@ Contour/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/build
 .PHONY : Contour/fast
 
+#=============================================================================
+# Target rules for targets named ContourTest
+
+# Build rule for target.
+ContourTest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 ContourTest
+.PHONY : ContourTest
+
+# fast build rule for target.
+ContourTest/fast:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/ContourTest.dir/build.make test/CMakeFiles/ContourTest.dir/build
+.PHONY : ContourTest/fast
+
 src/Arc.o: src/Arc.cpp.o
 .PHONY : src/Arc.o
 
@@ -297,6 +310,7 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... CONTOUR_LIB"
 	@echo "... Contour"
+	@echo "... ContourTest"
 	@echo "... src/Arc.o"
 	@echo "... src/Arc.i"
 	@echo "... src/Arc.s"

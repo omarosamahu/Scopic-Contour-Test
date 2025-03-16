@@ -65,16 +65,33 @@ CMAKE_BINARY_DIR = /home/omar/development/Scopic-Contour-Test/build
 # The main recursive "all" target.
 all: CMakeFiles/CONTOUR_LIB.dir/all
 all: CMakeFiles/Contour.dir/all
+all: test/all
 .PHONY : all
 
 # The main recursive "preinstall" target.
-preinstall:
+preinstall: test/preinstall
 .PHONY : preinstall
 
 # The main recursive "clean" target.
 clean: CMakeFiles/CONTOUR_LIB.dir/clean
 clean: CMakeFiles/Contour.dir/clean
+clean: test/clean
 .PHONY : clean
+
+#=============================================================================
+# Directory level rules for directory test
+
+# Recursive "all" directory target.
+test/all: test/CMakeFiles/ContourTest.dir/all
+.PHONY : test/all
+
+# Recursive "preinstall" directory target.
+test/preinstall:
+.PHONY : test/preinstall
+
+# Recursive "clean" directory target.
+test/clean: test/CMakeFiles/ContourTest.dir/clean
+.PHONY : test/clean
 
 #=============================================================================
 # Target rules for target CMakeFiles/CONTOUR_LIB.dir
@@ -127,6 +144,32 @@ Contour: CMakeFiles/Contour.dir/rule
 CMakeFiles/Contour.dir/clean:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/Contour.dir/build.make CMakeFiles/Contour.dir/clean
 .PHONY : CMakeFiles/Contour.dir/clean
+
+#=============================================================================
+# Target rules for target test/CMakeFiles/ContourTest.dir
+
+# All Build rule for target.
+test/CMakeFiles/ContourTest.dir/all:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/ContourTest.dir/build.make test/CMakeFiles/ContourTest.dir/depend
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/ContourTest.dir/build.make test/CMakeFiles/ContourTest.dir/build
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --progress-dir=/home/omar/development/Scopic-Contour-Test/build/CMakeFiles --progress-num=7,8,9,10,11 "Built target ContourTest"
+.PHONY : test/CMakeFiles/ContourTest.dir/all
+
+# Build rule for subdir invocation for target.
+test/CMakeFiles/ContourTest.dir/rule: cmake_check_build_system
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 5
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test/CMakeFiles/ContourTest.dir/all
+	$(CMAKE_COMMAND) -E cmake_progress_start /home/omar/development/Scopic-Contour-Test/build/CMakeFiles 0
+.PHONY : test/CMakeFiles/ContourTest.dir/rule
+
+# Convenience name for target.
+ContourTest: test/CMakeFiles/ContourTest.dir/rule
+.PHONY : ContourTest
+
+# clean rule for target.
+test/CMakeFiles/ContourTest.dir/clean:
+	$(MAKE) $(MAKESILENT) -f test/CMakeFiles/ContourTest.dir/build.make test/CMakeFiles/ContourTest.dir/clean
+.PHONY : test/CMakeFiles/ContourTest.dir/clean
 
 #=============================================================================
 # Special targets to cleanup operation of make.

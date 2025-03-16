@@ -23,7 +23,7 @@ namespace Geometery
         segments.erase(itr);
     }
 
-    bool Countour::isValid(const std::shared_ptr<Shape> &shape) const
+    bool Countour::isValid() const
     {
         if (segments.size() == 0)
         {
@@ -38,6 +38,7 @@ namespace Geometery
 
             auto currentSegmentStart = std::visit([](const auto &seg) -> Point
                                                   { return seg.getStartPoint(); }, *segments[i]);
+
             if (!prevSgmentEnd.isCloseTo(currentSegmentStart, epsilon))
             {
                 std::cerr << "This contour is not valid\n";

@@ -1,12 +1,13 @@
 #include <Contour.h>
 #include <vector>
 #include <algorithm>
+
 using namespace Geometery;
 
 int main(int argc, char const *argv[])
 {
-    Shape line = Line({9.0, 6.0}, {3.0, 4.0});
-    Shape arc = Arc({0.0, 0.0}, 5.0, 30,90);
+    Shape line = Line({0.0, 0.0}, {5.0, 0.0});
+    Shape arc = Arc({5.0, 2.0}, 2.0, -90.0, 40.0);
 
     auto linePtr = std::make_shared<Shape>(line);
     auto arcPtr = std::make_shared<Shape>(arc);
@@ -22,13 +23,13 @@ int main(int argc, char const *argv[])
 
     std::shared_ptr<Line> ptr = cPtr->getShapePointer<Line>(linePtr);
 
-    Point p;
-    p.X = 5.0;
-    p.Y = 25.0;
-    ptr->setStartPoint(p);
+    // Point p;
+    // p.X = 5.0;
+    // p.Y = 25.0;
+    // ptr->setStartPoint(p);
 
     cPtr->printSegmentInfo();
-    cPtr->isValid(linePtr);
+    cPtr->isValid();
 
     // if (!cPtr)
     // {
