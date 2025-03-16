@@ -15,7 +15,10 @@ namespace Geometery
         float getX() const { return X; }
         float getY() const { return Y; }
 
-        bool operator==(const Point &other) const { return X == other.X && Y == other.Y; }
+        bool operator==(const Point &other) const
+        {
+            return X == other.X && Y == other.Y;
+        }
         bool isCloseTo(const Point &other, double epsilon) const
         {
             return std::abs(X - other.X) < epsilon && std::abs(Y - other.Y) < epsilon;

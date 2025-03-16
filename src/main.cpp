@@ -6,11 +6,8 @@ using namespace Geometery;
 
 int main(int argc, char const *argv[])
 {
-    Shape line = Line({0.0, 0.0}, {5.0, 0.0});
-    Shape arc = Arc({5.0, 2.0}, 2.0, -90.0, 40.0);
-
-    auto linePtr = std::make_shared<Shape>(line);
-    auto arcPtr = std::make_shared<Shape>(arc);
+    auto linePtr = std::make_shared<Shape>(Line({0.0, 0.0}, {5.0, 0.0}));
+    auto arcPtr = std::make_shared<Shape>(Arc({5.0, 2.0}, 2.0, -90.0, 40.0));
 
     auto cPtr = std::make_shared<Countour>(1e-6);
 

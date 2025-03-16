@@ -54,9 +54,10 @@ namespace Geometery
 
         if (!end.isCloseTo(start, epsilon))
         {
-            std::cerr << "This contour is not valid\n";
+            std::cerr << "Segments are not connected\n";
             return false;
         }
+
         return true;
     }
 
