@@ -25,7 +25,7 @@ namespace Geometery
 
     bool Countour::isValid() const
     {
-        if (segments.size() == 0)
+        if (segments.empty())
         {
             std::cerr << "No segements added yet\n";
             return false;
@@ -33,11 +33,11 @@ namespace Geometery
 
         for (size_t i{1U}; i < segments.size(); i++)
         {
-            auto prevSgmentEnd = std::visit([](const auto &seg) -> Point
-                                            { return seg.getEndPoint(); }, *segments[i - 1]);
+            const Point prevSgmentEnd = std::visit([](const auto &seg) -> Point
+                                                   { return seg.getEndPoint(); }, *segments[i - 1]);
 
-            auto currentSegmentStart = std::visit([](const auto &seg) -> Point
-                                                  { return seg.getStartPoint(); }, *segments[i]);
+            const Point currentSegmentStart = std::visit([](const auto &seg) -> Point
+                                                         { return seg.getStartPoint(); }, *segments[i]);
 
             if (!prevSgmentEnd.isCloseTo(currentSegmentStart, epsilon))
             {
@@ -46,6 +46,17 @@ namespace Geometery
             }
         }
 
+        const Point start = std::visit([](const auto &seg) -> Point
+                                       { return seg.getStartPoint(); }, *segments.front());
+
+        const Point end = std::visit([](const auto &seg) -> Point
+                                     { return seg.getEndPoint(); }, *segments.back());
+
+        if (!end.isCloseTo(start, epsilon))
+        {
+            std::cerr << "This contour is not valid\n";
+            return false;
+        }
         return true;
     }
 

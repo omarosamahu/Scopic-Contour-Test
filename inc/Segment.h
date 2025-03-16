@@ -5,24 +5,34 @@
 #include <iostream>
 #include <variant>
 
-struct Point
+namespace Geometery
 {
-    Point() = default;
-    Point(double x, double y) : X{x}, Y{y} {}
-
-    bool operator==(const Point& other) const { return X == other.X && Y == other.Y; }
-    bool isCloseTo(const Point &other, double epsilon) const
+    struct Point
     {
-        return std::abs(X - other.X) < epsilon && std::abs(Y - other.Y) < epsilon;
-    }
+        Point() = default;
+        Point(double x, double y) : X{x}, Y{y} {}
 
-    double X;
-    double Y;
-};
+        float getX() const { return X; }
+        float getY() const { return Y; }
 
-namespace Geometery{
+        bool operator==(const Point &other) const { return X == other.X && Y == other.Y; }
+        bool isCloseTo(const Point &other, double epsilon) const
+        {
+            return std::abs(X - other.X) < epsilon && std::abs(Y - other.Y) < epsilon;
+        }
+
+        friend std::ostream &operator<<(std::ostream &os, const Point &p)
+        {
+            return os << '(' << p.getX() << ", " << p.getY() << ')';
+        }
+
+        double X;
+        double Y;
+    };
+
     template <typename Type>
-    class Segment {
+    class Segment
+    {
     public:
         double length() const
         {
@@ -42,7 +52,7 @@ namespace Geometery{
         Point getEndPoint() const
         {
             return static_cast<const Type *>(this)->getEndPointImpl();
-    }
+        }
     };
 }
 #endif // SEGMENT_H

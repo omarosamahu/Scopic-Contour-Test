@@ -19,22 +19,25 @@ int main(int argc, char const *argv[])
 
     auto cPtr1 = cPtr;
 
-    std::cout << cPtr.use_count() << "\n";
+    // Check if the contour is copyable or not
+    std::cout << "Ref count: " << cPtr.use_count() << "\n";
 
-    std::shared_ptr<Line> ptr = cPtr->getShapePointer<Line>(linePtr);
+    std::shared_ptr<Line> lPtr = cPtr->getShapePointer<Line>(linePtr);
 
-    // Point p;
-    // p.X = 5.0;
-    // p.Y = 25.0;
-    // ptr->setStartPoint(p);
+    Point p{5.0, 25.0};
+    lPtr->setStartPoint({15.0, 2.0});
+    lPtr->setEndPoint({-2.0, 4.0});
+
+    std::cout << "Line boundaries updated to: " << lPtr->getStartPoint() << " | " << lPtr->getEndPoint() << "\n";
 
     cPtr->printSegmentInfo();
     cPtr->isValid();
 
-    // if (!cPtr)
-    // {
-    //     std::cout << "Null\n";
-    // }
+    auto cPtr2 = std::move(cPtr1);
+    if (!cPtr1)
+    {
+        std::cout << "Null\n";
+    }
 
     return 0;
 }
